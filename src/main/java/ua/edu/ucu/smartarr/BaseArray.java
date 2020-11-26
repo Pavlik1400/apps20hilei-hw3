@@ -5,7 +5,8 @@ public class BaseArray implements SmartArray {
     private final Object[] arr;
 
     public BaseArray(Object[] values) {
-        arr = values;
+        arr = new Object[values.length];
+        System.arraycopy(values, 0, arr, 0, values.length);
     }
 
     @Override

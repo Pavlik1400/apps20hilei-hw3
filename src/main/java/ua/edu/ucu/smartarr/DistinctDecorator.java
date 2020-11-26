@@ -1,6 +1,5 @@
 package ua.edu.ucu.smartarr;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 // Remove duplicates from SmartArray. Use method equals() to compare objects

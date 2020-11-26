@@ -5,8 +5,6 @@
  */
 package ua.edu.ucu.functions;
 
-import java.util.function.Function;
-
 /**
  *
  * @author Andrii_Rodionov

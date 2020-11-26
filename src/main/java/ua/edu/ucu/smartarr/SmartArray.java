@@ -1,11 +1,12 @@
 package ua.edu.ucu.smartarr;
 
 public interface SmartArray {
+    // return array with SmartArray elements
+    Object[] toArray();
 
-    Object[] toArray(); // return array with SmartArray elements
+    // return current operation name applied to SmartArray
+    String operationDescription();
 
-    String operationDescription(); // return current operation name applied to SmartArray
-    
     int size(); // return SmartArray size
    
 }
