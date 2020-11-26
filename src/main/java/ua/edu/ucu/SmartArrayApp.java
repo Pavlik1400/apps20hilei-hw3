@@ -7,7 +7,7 @@ import ua.edu.ucu.functions.MyPredicate;
 import ua.edu.ucu.smartarr.*;
 
 public class SmartArrayApp {
-    private static final int goodPoint = 4;
+    private static final int GOOD_POINT = 4;
 
     public static Integer[]
             filterPositiveIntegersSortAndMultiplyBy2(
@@ -55,8 +55,8 @@ public class SmartArrayApp {
         array = new FilterDecorator(array, new MyPredicate() {
             @Override
             public boolean test(Object t) {
-                return ((Student) t).getYear() == 2 &&
-                        ((Student) t).getGPA() >= goodPoint;
+                return ((Student) t).getYear() == 2
+                        && ((Student) t).getGPA() >= GOOD_POINT;
             }
         });
         array = new SortDecorator(array, new MyComparator() {
@@ -69,8 +69,8 @@ public class SmartArrayApp {
         array = new MapDecorator(array, new MyFunction() {
             @Override
             public Object apply(Object t) {
-                return ((Student) t).getSurname() +
-                        " " + ((Student) t).getName();
+                return ((Student) t).getSurname()
+                        + " " + ((Student) t).getName();
             }
         });
         Object[] result = array.toArray();
