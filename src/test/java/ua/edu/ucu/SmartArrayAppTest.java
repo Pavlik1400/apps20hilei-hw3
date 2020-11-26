@@ -1,6 +1,8 @@
 package ua.edu.ucu;
 
 import org.junit.Test;
+import ua.edu.ucu.smartarr.BaseArray;
+
 import static org.junit.Assert.*;
 
 /**
