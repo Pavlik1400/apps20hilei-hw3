@@ -4,13 +4,19 @@ import java.util.Arrays;
 import ua.edu.ucu.functions.MyComparator;
 import ua.edu.ucu.functions.MyFunction;
 import ua.edu.ucu.functions.MyPredicate;
-import ua.edu.ucu.smartarr.*;
+import ua.edu.ucu.smartarr.FilterDecorator;
+import ua.edu.ucu.smartarr.SortDecorator;
+import ua.edu.ucu.smartarr.MapDecorator;
+import ua.edu.ucu.smartarr.DistinctDecorator;
+import ua.edu.ucu.smartarr.BaseArray;
+import ua.edu.ucu.smartarr.SmartArray;
+
 
 public class SmartArrayApp {
     private static final int GOOD_POINT = 4;
 
     public static Integer[]
-            filterPositiveIntegersSortAndMultiplyBy2(
+    filterPositiveIntegersSortAndMultiplyByTwo(
                     Integer[] integers) {
                 
         MyPredicate pr = new MyPredicate() {
@@ -22,8 +28,8 @@ public class SmartArrayApp {
 
         MyComparator cmp = new MyComparator() {
             @Override
-            public int compare(Object o1, Object o2) {
-                return ((Integer) o1) - ((Integer) o2);
+            public int compare(Object firstObj, Object secondObj) {
+                return ((Integer) firstObj) - ((Integer) secondObj);
             }
         };
 
@@ -46,7 +52,7 @@ public class SmartArrayApp {
     }
 
     public static String[]
-            findDistinctStudentNamesFrom2ndYearWithGPAgt4AndOrderedBySurname(
+    findDistinctStudentNamesFromSecondYearWithGPAgt4AndOrderedBySurname(
                     Student[] students) {
 
         // Hint: to convert Object[] to String[] - use the following code
@@ -56,14 +62,14 @@ public class SmartArrayApp {
             @Override
             public boolean test(Object t) {
                 return ((Student) t).getYear() == 2
-                        && ((Student) t).getGPA() >= GOOD_POINT;
+                        && ((Student) t).getGpa() >= GOOD_POINT;
             }
         });
         array = new SortDecorator(array, new MyComparator() {
             @Override
-            public int compare(Object o1, Object o2) {
-                return ((Student) o1).getSurname().
-                        compareTo(((Student) o2).getSurname());
+            public int compare(Object firstObj, Object secondObj) {
+                return ((Student) firstObj).getSurname().
+                        compareTo(((Student) secondObj).getSurname());
             }
         });
         array = new MapDecorator(array, new MyFunction() {
