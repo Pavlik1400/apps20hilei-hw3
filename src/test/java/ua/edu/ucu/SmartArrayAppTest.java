@@ -80,12 +80,24 @@ public class SmartArrayAppTest {
         Student[] students = {
                 new Student("Ivar", "Grimstad", 3.9, 2),
                 new Student("Ittai", "Zeidman", 4.5, 1),
-                new Student("Ittai", "Zeidman", 4.5, 1)};
+                new Student("Ittai", "Zeidman", 4.5, 1),
+
+                new Student("Ivar", "Grimstad", 3.9, 2),
+                new Student("Ivar", "Grimstad", 4.5, 2),
+                new Student("Ivar", "Grimstad", 3.9, 1),
+                new Student("Ivar", "Ahaha", 3.9, 2),
+                new Student("name", "Grimstad", 3.9, 2),};
         assertEquals(students[1], students[2]);
         assertNotEquals(students[0], students[1]);
         assertEquals(students[0], students[0]);
         assertNotEquals(students[0], null);
         assertNotEquals(students[0], new Object());
+
+        assertNotEquals(students[3], students[4]);
+        assertNotEquals(students[3], students[5]);
+        assertNotEquals(students[3], students[6]);
+        assertNotEquals(students[3], students[7]);
+
     }
 
     @Test
