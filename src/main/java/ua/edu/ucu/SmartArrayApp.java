@@ -52,7 +52,7 @@ public class SmartArrayApp {
     }
 
     public static String[]
-    findDistinctStudentNamesFromSecondYearWithGPAgt4AndOrderedBySurname(
+    findDistinctStudentNamesFromSecondYearWithGPAgtFourAndOrderedBySurname(
                     Student[] students) {
 
         // Hint: to convert Object[] to String[] - use the following code
